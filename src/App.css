@@ -1,0 +1,321 @@
+/* Add these new styles at the beginning of your App.css file */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.App-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.App-header h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.todo-form input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+.todo-form button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-form button:hover {
+  background-color: #3a7bc8;
+}
+
+@media (min-width: 481px) {
+  .todo-form {
+    flex-direction: row;
+  }
+
+  .todo-form input {
+    flex: 1;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .todo-form button {
+    width: auto;
+  }
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.todo-content input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.todo-content span {
+  cursor: pointer;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.todo-content span:hover, .subtask span:hover {
+  text-decoration: underline;
+}
+
+.todo-content input[type="text"], .subtask input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  font-size: 1rem;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.subtasks {
+  margin-left: 1.5rem;
+}
+
+.subtask {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtask input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.subtask span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+}
+
+.subtask-form {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.subtask-form input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.subtask-form button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subtask-form button:hover {
+  background-color: #3a7bc8;
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .App {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .App-header h1 {
+    font-size: 2rem;
+  }
+
+  .todo-form input,
+  .todo-form button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  #root {
+    padding: 10px;
+  }
+
+  .App {
+    padding: 1rem;
+  }
+
+  .App-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .todo-form input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .todo-form button {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .todo-item {
+    padding: 0.75rem;
+  }
+
+  .subtasks {
+    margin-left: 1rem;
+  }
+
+  .subtask-form {
+    flex-direction: column;
+  }
+
+  .subtask-form input,
+  .subtask-form button {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .subtask-form input {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.delete-btn {
+  background-color: transparent;
+  color: #888;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #ff4136;
+}
+
+.todo-content, .subtask {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.todo-content span, .subtask span {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.todo-content input[type="checkbox"], .subtask input[type="checkbox"] {
+  margin-right: 10px;
+}
