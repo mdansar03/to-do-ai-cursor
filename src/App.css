@@ -104,6 +104,8 @@ body, html {
 .todo-list {
   list-style-type: none;
   padding: 0;
+  max-height: 50vh;
+  overflow: auto;
 }
 
 .todo-item {
@@ -125,22 +127,9 @@ body, html {
 }
 
 .todo-content span {
-  cursor: pointer;
-  flex-grow: 1;
-  margin-right: 10px;
-}
-
-.todo-content span:hover, .subtask span:hover {
-  text-decoration: underline;
-}
-
-.todo-content input[type="text"], .subtask input[type="text"] {
-  flex-grow: 1;
-  margin-right: 10px;
-  font-size: 1rem;
-  padding: 2px 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .subtasks {
@@ -254,7 +243,6 @@ body, html {
 
   .subtask-form input,
   .subtask-form button {
-    width: 100%;
     border-radius: 4px;
   }
 
